@@ -8,9 +8,9 @@ def greedy_solver(instance):
 
     start_time = time.perf_counter()
 
-    retio = profits / weights
+    ratio = profits / weights
 
-    order = np.argsort(retio)[::-1]
+    order = np.argsort(ratio)[::-1]
 
     total_profit = 0
     total_weight = 0
