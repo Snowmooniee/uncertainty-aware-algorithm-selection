@@ -4,7 +4,7 @@ import pickle
 import os
 import pandas as pd
 
-with open("../data/knapsack_dataset.pkl", "rb") as f:
+with open("../data/knapsack_dataset_v2.pkl", "rb") as f:
     dataset = pickle.load(f)
 
 def evaluate_solvers():
@@ -26,14 +26,15 @@ def evaluate_solvers():
                 "dp_profit": dp_result["profit"],
                 "gap": gap,
                 "greedy_time": greedy_result["runtime"],
-                "dp_time": dp_result["runtime"]
+                "dp_time": dp_result["runtime"],
+                "best_algorithm": "dp" if dp_result["profit"] >= greedy_result["profit"] else "greedy"
             }
         )
 
     os.makedirs("../results", exist_ok=True)
 
     df = pd.DataFrame(results)
-    df.to_csv("../results/solver_results.csv", index=False)
+    df.to_csv("../results/solver_results_v2.csv", index=False)
 
 if __name__ == "__main__":
     evaluate_solvers()
