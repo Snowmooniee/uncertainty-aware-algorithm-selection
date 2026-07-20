@@ -26,7 +26,8 @@ def extract_features(instance):
         "mean_profit": mean_profit,
         "std_profit": std_profit,
         "mean_ratio": mean_ratio,
-        "std_ratio": std_ratio
+        "std_ratio": std_ratio,
+        "correlation": instance["correlation"]
     }
 
 if __name__ == "__main__":
