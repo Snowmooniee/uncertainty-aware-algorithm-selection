@@ -2,11 +2,11 @@ import pandas as pd
 import pickle
 from features import extract_features
 
-def build_dataset(lambda_runtime = 1000):
-    with open("../data/knapsack_dataset.pkl", "rb") as f:
+def build_dataset(lambda_runtime = 100):
+    with open("../data/knapsack_dataset_v2.pkl", "rb") as f:
         instances = pickle.load(f)
 
-    solver_df = pd.read_csv("../results/solver_results.csv")
+    solver_df = pd.read_csv("../results/solver_results_v2.csv")
 
     rows = []
 
